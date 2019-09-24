@@ -23,7 +23,7 @@ Por lo tanto, en ningún caso se ha buscado optimizar el listado original ni mod
 ## Arquitectura del código
 
 * El estado del mapa del juego se guarda en la variable `BUFFER`.
-* Cada vez que se va a hacer un movimiento en una de las cuatro direcctiones, se hace las comprobaciones necesarias. Para ello, se leen siempre las dos casillas siguientes en el sentido del movimiento y la anterior (en sentido contrario):
+* Cada vez que se va a hacer un movimiento en una de las cuatro direcciones, se hacen las comprobaciones necesarias. Para ello, se leen siempre las dos casillas siguientes en el sentido del movimiento y la anterior (en sentido contrario):
   * Si la casilla siguiente está vacía, se hace el movimiento sin más.
   * Si la casilla siguiente está ocupada por un muro, no se puede mover.
   * Si la casilla siguiente está ocupada por una caja, y las otras dos que se miran están vacías, se empuja la caja.
@@ -38,8 +38,8 @@ Sólo se reflejan los más relevantes.
 
 * En Locomotive BASIC la palabra clave `LET` es opcional. Sin embargo, se ha decidido mantenerla por minimizar el número de cambios.
 * En Spectrum sólo hay un modo de vídeo. Para lo que queríamos hacer, en Amstrad nos encaja usar el `MODE 0`, en el que tenemos más colores a costa de perder resolución.
-* En Spectrum, el color de tinta se selecciona de entre las disponibles con la palabra clave `INK`. En Amstrad se usa `PEN`, ya que `INK` sirve para seleccionar un color de la paleta de 16 simultáneos (en Modo 0) entre los 27 disponibles.
-* En Spectrum los GDU (Gráficos Definidos por el Usuario) se introducen poniendo el cursor en un modo especial, `[G]`, y usando una de las letras del abecedario. En Amstrad se puede redefinir todo el juego de caracteres, mediante la palabra clave `SYMBOL`.
+* En Spectrum, el color de tinta se selecciona de entre los disponibles con la palabra clave `INK`. En Amstrad se usa `PEN`, ya que `INK` sirve para seleccionar un color de la paleta de 16 simultáneos (en Modo 0) entre los 27 disponibles.
+* En Spectrum los GDU (Gráficos Definidos por el Usuario) se introducen poniendo el cursor en un modo especial, `[G]`, y usando una de las letras del abecedario. En Amstrad se puede redefinir todo el juego de caracteres mediante el uso de la palabra clave `SYMBOL`.
 * En Spectrum se usa la construcción `PRINT AT y,x` para situar el cursor en las coordenadas (x,y). El origen de coordenadas es el punto (0,0) que está en la esquina superior izquierda. En Amstrad se usa la palabra clave `LOCATE x,y`, o bien una secuencia de caracteres de control. El origen está en el mismo lugar pero es el punto (1,1).
 * Amstrad carece de la palabra clave `INVERSE`, para pintar un carácter con los atributos invertidos. Hay que simularla con caracteres de control.
 * Amstrad carece de la palabra clave `BRIGHT`, para modificar el brillo del color empleado. Por el contrario, en Modo 0 disponemos de 16 colores a elegir entre 27.
